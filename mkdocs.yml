@@ -1,0 +1,46 @@
+site_name: BrAInVR Documentation
+site_url: https://ANR-BrAInVR.github.io/
+repo_url: https://github.com/ANR-BrAInVR/ANR-BrAInVR.github.io
+repo_name: ANR-BrAInVR/ANR-BrAInVR.github.io
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Home: index.md
+
+  - MarmoVR:
+      - Overview: marmovr/index.md
+      - Quick Start: marmovr/quick-start.md
+      - Hardware: marmovr/hardware.md
+      - Software: marmovr/software.md
+      - Troubleshooting: marmovr/troubleshooting.md
+
+  - NemoVR:
+      - Overview: nemovr/index.md
+      - Quick Start: nemovr/quick-start.md
+      - Hardware: nemovr/hardware.md
+      - Software: nemovr/software.md
+      - Troubleshooting: nemovr/troubleshooting.md
+
+  - MarmoRoomRecord:
+      - Overview: marmoroomrecord/index.md
+
+  - NemoReefRecord:
+      - Overview: nemoreefrecord/index.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - fenced_code
+  - toc
