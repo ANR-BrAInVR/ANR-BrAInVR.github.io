@@ -1,6 +1,8 @@
 # MarmoVR
 
+<p align="center">
 <img src="../assets/logos/marmovr.png" width="64">
+</p>
 
 MarmoVR is an immersive Virtual Reality platform developed for behavioral experiments in freely moving marmosets.
 
@@ -40,46 +42,38 @@ The platform is organized around four main software modules.
 
 -   <img src="../assets/marmovr/Puppet%20in%20the%20cave.jpg" style="width:100%; height:220px; object-fit:cover;">
 
-    ## Quick Start
+    ## [Quick Start](quick-start.md)
 
     Learn how to start the complete MarmoVR system and launch an experiment.
 
-    [Open Quick Start](quick-start.md)
-
 -   <img src="../assets/marmovr/Setup%20overview.png" style="width:100%; height:220px; object-fit:cover;">
 
-    ## Hardware
+    ## [Hardware](hardware.md)
 
     Description of the cave, cameras, lenses, computers, projectors and network architecture.
 
-    [Open Hardware](hardware.md)
-
 -   <img src="../assets/marmovr/Tracking%20UI%20running.png" style="width:100%; height:220px; object-fit:cover;">
 
-    ## Software
+    ## [Software](software.md)
 
     Overview of the tracking, rendering, calibration and viewer software modules.
 
-    [Open Software](software.md)
-
 -   <img src="../assets/marmovr/UE-models.png" style="width:100%; height:220px; object-fit:cover;">
 
-    ## Troubleshooting
+    ## [Troubleshooting](troubleshooting.md)
 
     Common issues, checks and recovery procedures.
-
-    [Open Troubleshooting](troubleshooting.md)
 
 </div>
 
 ## Software Modules
 
-| Module         | Computer     | Repository                                                   | Documentation |
-| -------------- | ------------ | ------------------------------------------------------------ | ------------- |
-| 🎯 Calibration | Tracking PC  | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR-Calibration) | Coming soon   |
-| 🐒 Tracking    | Tracking PC  | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR-Tracking)    | Coming soon   |
-| 🧊 Rendering   | Rendering PC | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR-Rendering)   | Coming soon   |
-| 🖥️ Viewer     | Rendering PC | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR-Viewer)      | Coming soon   |
+| Module         | Computer     | Repository                                                | Documentation |
+| -------------- | ------------ |-----------------------------------------------------------| ------------- |
+| 🎯 Calibration | Tracking PC  | Coming soon                                               | Coming soon   |
+| 🐒 Tracking    | Tracking PC  | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR-Tracking) | Coming soon   |
+| 🧊 Rendering   | Rendering PC | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR)          | Coming soon   |
+| 🖥️ Viewer     | Rendering PC | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR-Viewer)   | Coming soon   |
 
 ---
 

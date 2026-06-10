@@ -136,12 +136,12 @@ The viewer module is used after data acquisition to inspect, replay and analyze 
 
 # Software Ecosystem Summary
 
-| Module      | Computer               | Repository                                                   | Documentation |
-| ----------- | ---------------------- | ------------------------------------------------------------ | ------------- |
-| Calibration | Tracking PC (Linux)    | Coming soon                                                  | Coming soon   |
-| Tracking    | Tracking PC (Linux)    | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR-Tracking)    | Coming soon   |
-| Rendering   | Rendering PC (Windows) | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR-Rendering)   | Coming soon   |
-| Viewer      | Rendering PC (Windows) | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR-Viewer)      | Coming soon   |
+| Module      | Computer               | Repository                                                | Documentation |
+| ----------- | ---------------------- |-----------------------------------------------------------| ------------- |
+| Calibration | Tracking PC (Linux)    | Coming soon                                               | Coming soon   |
+| Tracking    | Tracking PC (Linux)    | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR-Tracking) | Coming soon   |
+| Rendering   | Rendering PC (Windows) | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR)          | Coming soon   |
+| Viewer      | Rendering PC (Windows) | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR-Viewer)   | Coming soon   |
 
 
 ### Additional Documentation
