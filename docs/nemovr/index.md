@@ -1,6 +1,8 @@
 # NemoVR
 
+<p align="center">
 <img src="../assets/logos/nemovr.png" width="64">
+</p>
 
 NemoVR is a Virtual Reality platform designed to study the behavior of reef fish in immersive and controlled environments.
 

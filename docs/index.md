@@ -12,7 +12,7 @@ The project combines real-time tracking, deep learning, virtual reality and auto
 
 -   ![MarmoVR](assets/logos/marmovr.png){ width="64" }
 
-    ## MarmoVR
+    ## [MarmoVR](marmovr/)
 
     Virtual Reality platform for freely moving marmosets.
 
