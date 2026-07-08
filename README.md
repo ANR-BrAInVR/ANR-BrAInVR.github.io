@@ -14,39 +14,38 @@ https://anr-brainvr.github.io/
 
 ## Virtual Reality Platforms
 
+BrAInVR develops immersive virtual reality platforms enabling freely moving animals to interact with dynamic virtual environments in real time.
+
+Each platform combines:
+
+* Real-time animal tracking
+* Markerless pose estimation
+* Virtual environment rendering
+* Closed-loop behavioral experiments
+
 ### MarmoVR
 
-Virtual Reality platform for freely moving marmosets.
-
-The system combines:
-
-* Real-time tracking
-* DeepLabCut pose estimation
-* Unreal Engine rendering
-* Closed-loop behavioral experiments
+Virtual reality platform for freely moving marmosets.
 
 ### NemoVR
 
-Virtual Reality platform for reef fish.
-
-The platform combines:
-
-* Underwater acquisition systems
-* Fish tracking
-* Behavioral analysis
-* Virtual environment rendering
+Virtual reality platform for reef fish.
 
 ---
 
 ## Naturalistic Recording Platforms
 
+## Naturalistic Recording Platforms
+
+BrAInVR also develops multimodal recording platforms for studying natural social interactions in freely behaving animal groups under ecologically relevant conditions.
+
 ### MarmoRoomRecord
 
-Multi-camera recording system for naturalistic social interactions in groups of freely moving marmosets.
+Multi-camera recording platform for groups of freely moving marmosets.
 
 ### NemoReefRecord
 
-Underwater recording system for naturalistic social interactions in reef fish communities.
+Underwater multi-camera recording platform for reef fish communities.
 
 ---
 
