@@ -15,8 +15,8 @@ The 2D visualization mode displays synchronized camera recordings together with:
 - frame navigation
 - real-time visualization
 
-<video controls autoplay loop muted width="100%">
-  <source src="assets/nemovr/recording_2d.mp4" type="video/mp4">
+<video controls width="100%">
+  <source src="/assets/nemovr/recording_2d.mp4" type="video/mp4">
 </video>
 
 *Figure 1 — Example of synchronized multi-camera visualization of clownfish tracking with DeepLabCut markers and trajectory overlays.*
@@ -34,8 +34,8 @@ This mode is useful for:
 - multi-camera inspection
 - dynamic movement visualization
 
-<video controls autoplay loop muted width="100%">
-  <source src="assets/nemovr/recording_3d.mp4" type="video/mp4">
+<video controls width="100%">
+  <source src="/assets/nemovr/recording_3d.mp4" type="video/mp4">
 </video>
 
 *Figure 2 — Example of 3D reconstructed trajectory visualization generated from multi-camera tracking data.*

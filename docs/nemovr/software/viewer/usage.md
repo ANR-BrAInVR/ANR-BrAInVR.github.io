@@ -31,7 +31,7 @@ Navigate to the folder where NemoVR-Viewer was downloaded.
 Example on Windows:
 
 ```bash
-cd "C:\Users\YOUR_USERNAME\Desktop\NemoVR-Viewer"
+cd "D"
 ```
 
 ---
