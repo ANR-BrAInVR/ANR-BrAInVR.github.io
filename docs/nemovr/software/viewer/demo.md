@@ -1,7 +1,3 @@
----
-title: Demo
-nav_order: 5
----
 
 # Demo
 

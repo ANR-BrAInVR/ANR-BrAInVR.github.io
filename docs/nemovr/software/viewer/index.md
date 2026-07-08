@@ -1,8 +1,4 @@
----
-layout: home
-title: Home
-nav_order: 1
----
+# Viewer
 
 NemoVR-Viewer is a graphical application designed to visualize fish tracking experiments.
 
