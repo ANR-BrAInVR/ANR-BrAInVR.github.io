@@ -21,7 +21,7 @@ nav:
       - Overview: marmovr/index.md
       - Quick Start: marmovr/quick-start.md
       - Hardware: marmovr/hardware.md
-      - Software: marmovr/software.md
+      - Software: marmovr/software/index.md
       - Troubleshooting: marmovr/troubleshooting.md
 
   - NemoVR:
