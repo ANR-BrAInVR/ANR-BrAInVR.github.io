@@ -71,9 +71,9 @@ The platform is organized around four main software modules.
 | Module         | Computer     | Repository                                                | Documentation |
 | -------------- | ------------ |-----------------------------------------------------------| ------------- |
 | 🎯 Calibration | Tracking PC  | Coming soon                                               | Coming soon   |
-| 🐒 Tracking    | Tracking PC  | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR-Tracking) | Coming soon   |
-| 🧊 Rendering   | Rendering PC | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR)          | Coming soon   |
-| 🖥️ Viewer     | Rendering PC | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR-Viewer)   | Coming soon   |
+| 🐒 Tracking    | Tracking PC  | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR-Tracking){ target="_blank" rel="noopener" } | Coming soon   |
+| 🧊 Rendering   | Rendering PC | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR){ target="_blank" rel="noopener" }          | Coming soon   |
+| 🖥️ Viewer     | Rendering PC | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR-Viewer){ target="_blank" rel="noopener" }   | Coming soon   |
 
 ---
 

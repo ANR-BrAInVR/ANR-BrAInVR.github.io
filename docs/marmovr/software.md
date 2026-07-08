@@ -74,7 +74,7 @@ The tracking module processes images acquired from the four Ximea cameras to est
 
 | Resource      | Link                                                                 |
 | ------------- | -------------------------------------------------------------------- |
-| Repository    | [GitHub Repository](https://github.com/ANR-BrAInVR/MarmoVR-Tracking) |
+| Repository    | [GitHub Repository](https://github.com/ANR-BrAInVR/MarmoVR-Tracking){ target="_blank" rel="noopener" } |
 | Documentation | *Documentation coming soon*                                          |
 
 ### Responsibilities
@@ -98,7 +98,7 @@ The rendering module executes virtual environments and experimental protocols. I
 
 | Resource      | Link                                                                  |
 | ------------- | --------------------------------------------------------------------- |
-| Repository    | [GitHub Repository](https://github.com/ANR-BrAInVR/MarmoVR)           |
+| Repository    | [GitHub Repository](https://github.com/ANR-BrAInVR/MarmoVR){ target="_blank" rel="noopener" }           |
 | Documentation | *Documentation coming soon*                                           |
 
 ### Responsibilities
@@ -121,7 +121,7 @@ The viewer module is used after data acquisition to inspect, replay and analyze 
 
 | Resource      | Link                                                               |
 | ------------- | ------------------------------------------------------------------ |
-| Repository    | [GitHub Repository](https://github.com/ANR-BrAInVR/MarmoVR-Viewer) |
+| Repository    | [GitHub Repository](https://github.com/ANR-BrAInVR/MarmoVR-Viewer){ target="_blank" rel="noopener" } |
 | Documentation | *Documentation coming soon*                                        |
 
 ### Responsibilities
@@ -139,9 +139,9 @@ The viewer module is used after data acquisition to inspect, replay and analyze 
 | Module      | Computer               | Repository                                                | Documentation |
 | ----------- | ---------------------- |-----------------------------------------------------------| ------------- |
 | Calibration | Tracking PC (Linux)    | Coming soon                                               | Coming soon   |
-| Tracking    | Tracking PC (Linux)    | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR-Tracking) | Coming soon   |
-| Rendering   | Rendering PC (Windows) | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR)          | Coming soon   |
-| Viewer      | Rendering PC (Windows) | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR-Viewer)   | Coming soon   |
+| Tracking    | Tracking PC (Linux)    | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR-Tracking){ target="_blank" rel="noopener" } | Coming soon   |
+| Rendering   | Rendering PC (Windows) | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR){ target="_blank" rel="noopener" }          | Coming soon   |
+| Viewer      | Rendering PC (Windows) | [GitHub](https://github.com/ANR-BrAInVR/MarmoVR-Viewer){ target="_blank" rel="noopener" }   | Coming soon   |
 
 
 ### Additional Documentation

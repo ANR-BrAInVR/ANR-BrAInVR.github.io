@@ -43,7 +43,7 @@ The setup uses four Ximea USB3 industrial cameras.
 
 **Reference**
 
-* https://www.ximea.com/products/usb-vision-industrial/xiq-usb3-compact-cmos-cameras/onsemi-python1300-spartan-7-usb3-color-compact-camera
+* [Camera](https://www.ximea.com/products/usb-vision-industrial/xiq-usb3-compact-cmos-cameras/onsemi-python1300-spartan-7-usb3-color-compact-camera){ target="_blank" rel="noopener" }
 
 #### Responsibilities
 
@@ -71,7 +71,7 @@ Each Ximea camera is equipped with a Thorlabs MVL6WA lens.
 
 **Reference**
 
-* https://www.thorlabs.com/camera-lenses-for-machine-vision?tabName=Overview
+* [Lense](https://www.thorlabs.com/camera-lenses-for-machine-vision?tabName=Overview){ target="_blank" rel="noopener" }
 
 ---
 
