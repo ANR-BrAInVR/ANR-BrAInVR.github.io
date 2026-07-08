@@ -35,8 +35,6 @@ Virtual reality platform for reef fish.
 
 ## Naturalistic Recording Platforms
 
-## Naturalistic Recording Platforms
-
 BrAInVR also develops multimodal recording platforms for studying natural social interactions in freely behaving animal groups under ecologically relevant conditions.
 
 ### MarmoRoomRecord
@@ -46,36 +44,6 @@ Multi-camera recording platform for groups of freely moving marmosets.
 ### NemoReefRecord
 
 Underwater multi-camera recording platform for reef fish communities.
-
----
-
-## Documentation Structure
-
-The BrAInVR documentation currently includes:
-
-### MarmoVR
-
-* Overview
-* Quick Start
-* Hardware
-* Software
-* Troubleshooting
-
-### NemoVR
-
-* Overview
-* Quick Start
-* Hardware
-* Software
-* Troubleshooting
-
-### MarmoRoomRecord
-
-* Overview
-
-### NemoReefRecord
-
-* Overview
 
 ---
 
