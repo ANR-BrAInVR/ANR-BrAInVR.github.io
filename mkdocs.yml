@@ -28,7 +28,14 @@ nav:
       - Overview: nemovr/index.md
       - Quick Start: nemovr/quick-start.md
       - Hardware: nemovr/hardware.md
-      - Software: nemovr/software.md
+      - Software:
+          - Overview: nemovr/software/index.md
+          - Viewer:
+              - Overview: nemovr/software/viewer/index.md
+              - Installation: nemovr/software/viewer/installation.md
+              - Settings: nemovr/software/viewer/settings.md
+              - Usage: nemovr/software/viewer/usage.md
+              - Demo: nemovr/software/viewer/demo.md
       - Troubleshooting: nemovr/troubleshooting.md
 
   - MarmoRoomRecord:
@@ -36,6 +43,9 @@ nav:
 
   - NemoReefRecord:
       - Overview: nemoreefrecord/index.md
+
+  - Developer Guide:
+      - Overview: developer-guide/index.md
 
 markdown_extensions:
   - admonition

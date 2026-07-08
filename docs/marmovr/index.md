@@ -54,7 +54,7 @@ The platform is organized around four main software modules.
 
 -   <img src="../assets/marmovr/Tracking%20UI%20running.png" style="width:100%; height:220px; object-fit:cover;">
 
-    ## [Software](software.md)
+    ## [Software](software/software.md)
 
     Overview of the tracking, rendering, calibration and viewer software modules.
 
