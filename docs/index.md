@@ -12,13 +12,13 @@ The project combines real-time tracking, deep learning, virtual reality and auto
 
 -   ![MarmoVR](assets/logos/marmovr.png){ width="64" }
 
-    ## [MarmoVR](marmovr/)
+    ## [MarmoVR](marmovr/index.md)
 
     Virtual Reality platform for freely moving marmosets.
 
 -   ![NemoVR](assets/logos/nemovr.png){ width="64" }
 
-    ## NemoVR
+    ## [NemoVR](nemovr/index.md)
 
     Virtual Reality platform for reef fish.
 
@@ -32,13 +32,13 @@ The project combines real-time tracking, deep learning, virtual reality and auto
 
 -   ![MarmoRoomRecord](assets/logos/marmoroomrecord.png){ width="64" }
 
-    ## MarmoRoomRecord
+    ## [MarmoRoomRecord](marmoroomrecord/index.md)
 
     Multi-camera recording system for naturalistic social interactions in groups of marmosets.
 
 -   ![NemoReefRecord](assets/logos/nemoreefrecord.png){ width="64" }
 
-    ## NemoReefRecord
+    ## [NemoReefRecord](nemoreefrecord/index.md)
 
     Underwater recording system for naturalistic social interactions in reef fish communities.
 

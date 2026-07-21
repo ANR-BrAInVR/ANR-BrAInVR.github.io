@@ -1,0 +1,50 @@
+/* =========================================================
+   LOGOS DES PROJETS DANS LA BARRE LATÉRALE GAUCHE
+   ========================================================= */
+
+/* Logo masqué par défaut */
+.md-sidebar--primary .md-sidebar__scrollwrap::before {
+  content: "";
+  display: none;
+
+  width: 64px;
+  height: 64px;
+
+  margin: 18px 0 14px 40px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* MarmoVR */
+body.project-marmovr
+  .md-sidebar--primary
+  .md-sidebar__scrollwrap::before {
+  display: block;
+  background-image: url("../assets/logos/marmovr.png");
+}
+
+/* NemoVR */
+body.project-nemovr
+  .md-sidebar--primary
+  .md-sidebar__scrollwrap::before {
+  display: block;
+  background-image: url("../assets/logos/nemovr.png");
+}
+
+/* MarmoRoomRecord */
+body.project-marmoroomrecord
+  .md-sidebar--primary
+  .md-sidebar__scrollwrap::before {
+  display: block;
+  background-image: url("../assets/logos/marmoroomrecord.png");
+}
+
+/* NemoReefRecord */
+body.project-nemoreefrecord
+  .md-sidebar--primary
+  .md-sidebar__scrollwrap::before {
+  display: block;
+  background-image: url("../assets/logos/nemoreefrecord.png");
+}
