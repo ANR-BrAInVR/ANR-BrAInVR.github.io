@@ -27,7 +27,14 @@ nav:
       - Overview: marmovr/index.md
       - Quick Start: marmovr/quick-start.md
       - Hardware: marmovr/hardware.md
-      - Software: marmovr/software/index.md
+      - Software:
+          - Overview: marmovr/software/index.md
+          - Modules:
+            - Viewer: marmovr/software/viewer/index.md
+            - Tracking: marmovr/software/tracking/index.md
+            - Calibration: marmovr/software/calibration/index.md
+            - Rendering: marmovr/software/rendering/index.md
+            - PostProcessing: marmovr/software/postprocessing/index.md
       - Troubleshooting: marmovr/troubleshooting.md
 
   - NemoVR:
@@ -46,6 +53,7 @@ nav:
 
   - MarmoRoomRecord:
       - Overview: marmoroomrecord/index.md
+      - Hardware: marmoroomrecord/hardware.md
 
   - NemoReefRecord:
       - Overview: nemoreefrecord/index.md
@@ -60,3 +68,6 @@ markdown_extensions:
   - tables
   - fenced_code
   - toc
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg

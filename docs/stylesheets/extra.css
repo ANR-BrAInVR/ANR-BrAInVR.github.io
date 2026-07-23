@@ -2,16 +2,12 @@
    LOGOS DES PROJETS DANS LA BARRE LATÉRALE GAUCHE
    ========================================================= */
 
-/* Logo masqué par défaut */
 .md-sidebar--primary .md-sidebar__scrollwrap::before {
   content: "";
   display: none;
-
   width: 64px;
   height: 64px;
-
   margin: 18px 0 14px 40px;
-
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -47,4 +43,22 @@ body.project-nemoreefrecord
   .md-sidebar__scrollwrap::before {
   display: block;
   background-image: url("../assets/logos/nemoreefrecord.png");
+}
+
+/* =========================================================
+   IMAGES DE DOCUMENTATION
+   ========================================================= */
+
+.doc-image {
+  display: block;
+  width: 70%;
+  max-width: 700px;
+  height: auto;
+  margin: 1.5rem auto;
+}
+
+@media screen and (max-width: 768px) {
+  .doc-image {
+    width: 100%;
+  }
 }

@@ -6,10 +6,10 @@ This guide explains how to start the MarmoVR setup and run a standard experiment
 
 The following elements must already be available:
 
-* A valid camera calibration
-* A trained DeepLabCut model
-* A functional Unreal project
-* A marmoset (or a puppet for testing)
+- A valid camera calibration
+- A trained DeepLabCut model
+- A functional Unreal project
+- A marmoset or a puppet for testing
 
 ---
 
@@ -21,11 +21,11 @@ Turn on the three power strips:
 2. Power strip located above the bottom tray of the setup.
 3. Power strip located on the vertical bar near the cave entrance.
 
-![Power strip 1](../assets/marmovr/Power%20strip%201.jpg)
+![Power strip located on the floor](../assets/marmovr/Power%20strip%201.jpg){ .doc-image }
 
-![Power strip 2](../assets/marmovr/Power%20strip%202.jpg)
+![Power strip located above the bottom tray](../assets/marmovr/Power%20strip%202.jpg){ .doc-image }
 
-![Power strip 3](../assets/marmovr/Power%20strip%203.jpg)
+![Power strip located near the cave entrance](../assets/marmovr/Power%20strip%203.jpg){ .doc-image }
 
 The setup lights should switch on.
 
@@ -37,14 +37,14 @@ Boot the Tracking PC on the Linux partition.
 
 1. Press the power button.
 2. Select **Ubuntu** in the boot menu.
-3. Login using:
+3. Log in using:
 
 ```text
 User: User
 Password: ouistiti
 ```
 
-![Tracking PC](../assets/marmovr/PC%20turn%20on.jpg)
+![Tracking PC power button](../assets/marmovr/PC%20turn%20on.jpg){ .doc-image }
 
 ---
 
@@ -52,7 +52,7 @@ Password: ouistiti
 
 Boot the Rendering PC under Windows.
 
-Login using:
+Log in using:
 
 ```text
 User: User
@@ -65,17 +65,18 @@ Password: ouistiti
 
 Remove the lens covers from all four Ximea cameras.
 
-⚠️ Do not modify camera orientation. Any camera movement may require a full recalibration of the system.
+!!! warning
+    Do not modify the camera orientation. Any camera movement may require a complete recalibration of the system.
 
-![Camera covers](../assets/marmovr/Ximea%20camera%20lens%20cover.jpg)
+![Ximea camera lens cover](../assets/marmovr/Ximea%20camera%20lens%20cover.jpg){ .doc-image }
 
 Remove the optical covers from the three projectors.
 
-![Projector cover](../assets/marmovr/VP%20remove%20cover.jpg)
+![Removing a projector cover](../assets/marmovr/VP%20remove%20cover.jpg){ .doc-image }
 
 Turn on all projectors.
 
-![Projector power](../assets/marmovr/VP%20turn%20on.jpg)
+![Projector power button](../assets/marmovr/VP%20turn%20on.jpg){ .doc-image }
 
 ---
 
@@ -83,9 +84,7 @@ Turn on all projectors.
 
 Turn off all room lights except the two LED strips of the setup.
 
-Open the Tracking project on the Tracking PC.
-
-Launch:
+Open the Tracking project on the Tracking PC and launch:
 
 ```text
 Tracking.py
@@ -107,9 +106,9 @@ Start Experiment
 
 from the Tracking interface.
 
-![Tracking interface](../assets/marmovr/Tracking%20UI%20running.png)
+![MarmoVR Tracking interface](../assets/marmovr/Tracking%20UI%20running.png){ .doc-image }
 
-If:
+If the controller parameter is set to:
 
 ```text
 controller = UE
@@ -123,12 +122,12 @@ the experiment will be started from Unreal Engine.
 
 On the Rendering PC:
 
-1. Start **nDisplay Listener**
-2. Start **nDisplay Launcher**
-3. Select the correct configuration
-4. Press **Run**
+1. Start **nDisplay Listener**.
+2. Start **nDisplay Launcher**.
+3. Select the correct configuration.
+4. Press **Run**.
 
-![nDisplay launcher](../assets/marmovr/UE%20nDisplay%20launcher.png)
+![Unreal Engine nDisplay Launcher](../assets/marmovr/UE%20nDisplay%20launcher.png){ .doc-image }
 
 ---
 
@@ -136,20 +135,20 @@ On the Rendering PC:
 
 In the Unreal Engine experiment interface:
 
-* Select the experiment
-* Select the monkey ID
-* Select the experimental condition
+- Select the experiment.
+- Select the monkey ID.
+- Select the experimental condition.
 
 Then:
 
-1. Press **Start Experiment**
-2. Verify that all virtual objects are correctly positioned
-3. Verify that the sliding door is closed
-4. Press **New References**
+1. Press **Start Experiment**.
+2. Verify that all virtual objects are correctly positioned.
+3. Verify that the sliding door is closed.
+4. Press **New References**.
 
 This updates the background reference images used by the tracking system.
 
-![Experiment interface](../assets/marmovr/UE%20experiment%20interface%20\(filled\).png)
+![Unreal Engine experiment interface](../assets/marmovr/UE%20experiment%20interface%20%28filled%29.png){ .doc-image }
 
 ---
 
@@ -161,7 +160,7 @@ Place the marmoset inside the cave and start the experiment.
 
 For testing purposes, a puppet can be used instead of a live animal.
 
-![Marmoset puppet](../assets/marmovr/Puppet%20in%20the%20cave.jpg)
+![Marmoset puppet inside the MarmoVR cave](../assets/marmovr/Puppet%20in%20the%20cave.jpg){ .doc-image }
 
 ---
 
@@ -171,8 +170,8 @@ At the end of the session:
 
 1. Stop the experiment from Unreal Engine.
 2. Stop the Tracking software.
-3. Turn off projectors.
+3. Turn off the projectors.
 4. Shut down both computers.
-5. Replace projector covers.
-6. Replace camera lens covers.
+5. Replace the projector covers.
+6. Replace the camera lens covers.
 7. Turn off all power strips.
