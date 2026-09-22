@@ -1,8 +1,6 @@
 # Hardware and technical details
 
-MarmoRoomRecord uses eight synchronized Ethernet cameras installed around the indoor marmoset living room.
-
-The cameras are connected to a PoE+ switch. A long Cat 7 Ethernet cable links the switch to a dedicated acquisition computer located in a separate analysis room.
+MarmoRoomRecord is built around eight synchronized GigE cameras installed around the indoor marmoset living room. The acquisition architecture is designed to sustain simultaneous high-resolution video streams while keeping the acquisition computer outside the animal room.
 
 ---
 
@@ -10,30 +8,124 @@ The cameras are connected to a PoE+ switch. A long Cat 7 Ethernet cable links th
 
 | Component | Description |
 |---|---|
-| Cameras | 8 Basler ace 2 a2A1920-51gcBAS GigE cameras |
-| Resolution | 1920 × 1200 pixels |
-| Acquisition rate | 50 frames per second |
-| Synchronization | Precision Time Protocol |
-| Network | PoE+ switch and 10 Gigabit Ethernet link |
-| Long-distance connection | Cat 7 Ethernet cable between the recording and analysis rooms |
-| Acquisition computer | Dedicated computer for camera control, recording and data storage |
+| Cameras | 8 × Basler ace 2 a2A1920-51gcBAS GigE cameras |
+| Sensor output | 1920 × 1200 pixels, BayerRG8 |
+| Target acquisition rate | 50 frames per second per camera |
+| Synchronization | IEEE 1588 Precision Time Protocol (PTP) |
+| Camera network | 1 Gigabit Ethernet per camera |
+| Switch | TP-Link Omada SG2210XMP-M2 PoE+ switch |
+| Acquisition uplink | 10 Gigabit Ethernet |
+| Acquisition interface | Basler 10GigE PCIe network interface |
 | Location | MPRC, CNRS Joseph Aiguier campus, Marseille |
 
 ---
 
-## System architecture
+## Cameras
 
-The acquisition computer:
+The platform uses eight **Basler ace 2 a2A1920-51gcBAS** cameras. Each camera acquires 1920 × 1200 pixel Bayer images and is configured for operation up to 50 fps.
 
-- configures and synchronizes the cameras;
-- starts and stops recordings;
-- receives the eight video streams;
-- writes the acquired data to local storage.
+The current camera network uses static IPv4 addresses:
 
-The computer is placed outside the animal room to reduce noise, heat and disturbance.
+| Camera serial number | IP address |
+|---|---|
+| 41942999 | 192.168.3.3 |
+| 41950769 | 192.168.3.4 |
+| 41950775 | 192.168.3.5 |
+| 41979537 | 192.168.3.6 |
+| 41979539 | 192.168.3.7 |
+| 41979541 | 192.168.3.8 |
+| 42011337 | 192.168.3.9 |
+| 42011338 | 192.168.3.10 |
+
+The acquisition computer uses `192.168.3.2` on the camera network.
+
+### Acquisition parameters
+
+The current high-frame-rate configuration uses the following baseline settings:
+
+| Parameter | Current value |
+|---|---|
+| Resolution | 1920 × 1200 |
+| Pixel format | BayerRG8 |
+| Frame rate | 50 fps |
+| Exposure time | 9000 µs |
+| Gain | 0 dB |
+| GigE packet size | 8192 bytes |
+| Camera throughput limit | 125,000,000 B/s |
+| Bandwidth reserve | 5% |
+| Host buffers | 15 |
+| Packet timeout | 40 ms |
+| Frame retention | 200 ms |
+| Maximum resend requests | 4 |
+
+These values are still part of the validation process and may evolve as the full eight-camera system is stress-tested.
 
 ---
 
-## Development status
+## Network architecture
 
-Camera positioning, long-duration acquisition, synchronization and automated tracking are currently being tested.
+Each camera is connected by Gigabit Ethernet to the **TP-Link Omada SG2210XMP-M2** PoE+ switch. The switch provides both camera connectivity and power distribution.
+
+The eight camera streams are aggregated at the switch and transferred to the acquisition computer over a **10 Gigabit Ethernet uplink**. The acquisition computer uses a dedicated **Basler 10GigE PCIe network interface** for the camera network.
+
+```text
+Camera 1 ─┐
+Camera 2 ─┤
+Camera 3 ─┤
+Camera 4 ─┤
+Camera 5 ─┼── 1 GbE ──> PoE+ switch ── 10 GbE ──> Acquisition computer
+Camera 6 ─┤
+Camera 7 ─┤
+Camera 8 ─┘
+```
+
+This architecture separates the eight 1 GbE camera links from the aggregated link to the recording computer and provides sufficient network capacity for simultaneous acquisition.
+
+---
+
+## Camera synchronization
+
+The cameras use **Precision Time Protocol (PTP)** to maintain a common hardware clock over the Ethernet network.
+
+During synchronization tests, one camera operates as the PTP master and the remaining cameras as slaves. Two-camera tests have demonstrated sub-microsecond synchronization, with measured slave offsets on the order of tens of nanoseconds under stable conditions.
+
+The acquisition software reports the PTP state of each camera so that synchronization can be checked before recording starts.
+
+---
+
+## Acquisition computer and GPU
+
+The dedicated acquisition computer is responsible for:
+
+- configuring and opening the eight cameras;
+- establishing and monitoring PTP synchronization;
+- receiving the simultaneous GigE image streams;
+- converting raw Bayer frames when preview is required;
+- handling and recording the acquired camera streams;
+- writing video files to local storage;
+- reporting camera and recording status.
+
+The computer is located outside the animal room to reduce noise, heat and disturbance and to simplify access during recording sessions.
+
+---
+
+## Thermal monitoring
+
+Camera temperature is monitored by the acquisition software. During current multi-camera tests in a room at approximately 30 °C, camera temperatures have typically been around **47–50 °C**.
+
+Temperature monitoring is retained in the recording interface so that thermal behaviour can be followed during long-duration tests.
+
+---
+
+## Validation status
+
+The hardware architecture is currently being validated for sustained eight-camera acquisition. Current work focuses on:
+
+- stable acquisition at 1920 × 1200 and 50 fps;
+- packet-loss and resend behaviour under full network load;
+- PTP synchronization across all eight cameras;
+- one-hour and longer recording tests;
+- camera temperature during sustained acquisition;
+- reliable recording without acquisition or recorder drops.
+
+The final operating parameters will be documented once long-duration validation of the complete eight-camera system is complete.

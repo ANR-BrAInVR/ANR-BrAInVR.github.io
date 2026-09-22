@@ -6,7 +6,9 @@
   </strong>
 </p>
 
-MarmoRoomRecord is a synchronized multi-camera platform designed to study the spontaneous behaviour and social interactions of freely moving marmosets living together as a captive group.
+MarmoRoomRecord is a synchronized multi-camera video acquisition platform developed to record the spontaneous behaviour and social interactions of freely moving common marmosets living together in a large enriched environment.
+
+The platform is part of the **BrAInVR** project and provides the high-resolution, multi-view video data required for long-term behavioural analysis, individual tracking and future 3D reconstruction.
 
 ## Platform overview
 
@@ -24,10 +26,10 @@ MarmoRoomRecord is a synchronized multi-camera platform designed to study the sp
   </em>
 </p>
 
-Eight synchronized cameras record the animals as they move, rest and interact within their usual group environment.
+Eight synchronized Basler cameras observe the room simultaneously from complementary viewpoints. The cameras stream over Gigabit Ethernet to a central PoE+ switch, while a dedicated acquisition computer receives the aggregated traffic through a 10 Gigabit Ethernet connection and records the video streams locally.
 
 !!! note "Development status"
-    MarmoRoomRecord is currently under development.
+    MarmoRoomRecord is currently under active development. The eight-camera acquisition architecture, PTP synchronization and recording pipeline are being validated before long-duration experimental recordings.
 
 ---
 
@@ -35,7 +37,7 @@ Eight synchronized cameras record the animals as they move, rest and interact wi
 
 The system is installed at the **Mediterranean Primate Research Center (MPRC)** on the **CNRS Joseph Aiguier campus in Marseille, France**.
 
-The MPRC provides the specialised facilities and animal-care expertise required for housing and studying common marmosets.
+The recording room provides a large, enriched environment in which marmosets can move and interact as a social group, allowing behavioural data to be collected under substantially more naturalistic conditions than in conventional experimental cages.
 
 ### Related resources
 
@@ -46,11 +48,13 @@ The MPRC provides the specialised facilities and animal-care expertise required 
 
 ## Animal identification
 
-Individuals can be recognised using:
+Individuals can be recognised using complementary visual cues:
 
 - coloured bead collars;
 - distinctive physical features;
 - shaved tail sections following a four-segment binary code.
+
+These visual identifiers are intended to facilitate manual annotation and the development and validation of automatic individual tracking methods.
 
 ---
 
@@ -58,10 +62,20 @@ Individuals can be recognised using:
 
 MarmoRoomRecord is designed to:
 
-- record spontaneous group behaviour;
-- track several individuals simultaneously;
-- reconstruct three-dimensional trajectories;
-- quantify spatial and social interactions;
-- generate datasets for behavioural analysis and MarmoVR.
+- record spontaneous group behaviour over extended periods;
+- observe several freely moving individuals simultaneously from multiple viewpoints;
+- provide synchronized images for multi-view tracking and 3D reconstruction;
+- quantify spatial behaviour and social interactions;
+- build large video datasets for automated behavioural analysis;
+- provide naturalistic behavioural data for the wider BrAInVR project and its virtual-reality experiments.
 
-Technical specifications are available on the [Hardware](hardware.md) page.
+The BrAInVR project ultimately aims to combine these recordings with AI-based pose estimation, individual identification, behavioural analysis and agent-centric models.
+
+---
+
+## Documentation
+
+Detailed information is available in the following pages:
+
+- [Hardware](hardware.md) — cameras, network, synchronization and acquisition computer;
+- [Software](software.md) — acquisition application, configuration, recording pipeline and monitoring.
