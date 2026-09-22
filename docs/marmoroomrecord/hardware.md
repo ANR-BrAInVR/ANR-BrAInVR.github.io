@@ -24,6 +24,8 @@ MarmoRoomRecord is built around eight synchronized GigE cameras installed around
 
 The platform uses eight **Basler ace 2 a2A1920-51gcBAS** cameras. Each camera acquires 1920 × 1200 pixel Bayer images and is configured for operation up to 50 fps.
 
+[Basler ace 2 a2A1920-51gcBAS — official product page and technical specifications](https://www.baslerweb.com/en/shop/a2a1920-51gcbas/)
+
 The current camera network uses static IPv4 addresses:
 
 | Camera serial number | IP address |
@@ -87,13 +89,15 @@ This architecture separates the eight 1 GbE camera links from the aggregated lin
 
 The cameras use **Precision Time Protocol (PTP)** to maintain a common hardware clock over the Ethernet network.
 
+[Basler documentation — Precision Time Protocol (PTP)](https://docs.baslerweb.com/precision-time-protocol)
+
 During synchronization tests, one camera operates as the PTP master and the remaining cameras as slaves. Two-camera tests have demonstrated sub-microsecond synchronization, with measured slave offsets on the order of tens of nanoseconds under stable conditions.
 
 The acquisition software reports the PTP state of each camera so that synchronization can be checked before recording starts.
 
 ---
 
-## Acquisition computer and GPU
+## Acquisition computer
 
 The dedicated acquisition computer is responsible for:
 
@@ -111,21 +115,22 @@ The computer is located outside the animal room to reduce noise, heat and distur
 
 ## Thermal monitoring
 
-Camera temperature is monitored by the acquisition software. During current multi-camera tests in a room at approximately 30 °C, camera temperatures have typically been around **47–50 °C**.
+Camera temperature is monitored by the acquisition software. In a room at approximately **25 °C**, the cameras have been measured between **50 and 54 °C**.
 
-Temperature monitoring is retained in the recording interface so that thermal behaviour can be followed during long-duration tests.
+The Basler ace 2 cameras are industrial cameras designed for continuous operation. Although MarmoRoomRecord does not record continuously, the cameras remain powered on continuously between recording sessions. For this reason, camera temperature is monitored continuously in the acquisition interface so that abnormal thermal behaviour can be detected during day-to-day operation.
 
 ---
 
 ## Validation status
 
-The hardware architecture is currently being validated for sustained eight-camera acquisition. Current work focuses on:
+The current system has been validated for the main acquisition and recording workflow:
 
-- stable acquisition at 1920 × 1200 and 50 fps;
-- packet-loss and resend behaviour under full network load;
-- PTP synchronization across all eight cameras;
-- one-hour and longer recording tests;
-- camera temperature during sustained acquisition;
-- reliable recording without acquisition or recorder drops.
+- [x] Eight-camera network operation and communication tests
+- [x] Video writing tests for recording sessions up to **1 hour**
+- [x] Scheduled recording executed correctly over **several consecutive days without intervention**
+- [x] Recording journal/history available for all completed sessions
+- [x] Video viewer tested and operational
+- [x] Diagnostic tools tested and operational
+- [ ] **ntfy notifications on the Joseph Aiguier campus** — still to be validated, as access to the ntfy service may be restricted by the local eduroam/network configuration
 
-The final operating parameters will be documented once long-duration validation of the complete eight-camera system is complete.
+Further validation will continue during routine experimental use.
