@@ -6,9 +6,7 @@ The project combines real-time tracking, deep learning, virtual reality and auto
 
 ## Documentation Website
 
-📖 **Online documentation**
-
-https://anr-brainvr.github.io/{ target="_blank" rel="noopener" }
+📖 **[Open the BrAInVR documentation](https://anr-brainvr.github.io/)**
 
 ---
 
