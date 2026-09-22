@@ -54,6 +54,7 @@ nav:
   - MarmoRoomRecord:
       - Overview: marmoroomrecord/index.md
       - Hardware: marmoroomrecord/hardware.md
+      - Software: marmoroomrecord/software.md
 
   - NemoReefRecord:
       - Overview: nemoreefrecord/index.md
