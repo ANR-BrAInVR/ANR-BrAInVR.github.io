@@ -58,6 +58,7 @@ nav:
 
   - NemoReefRecord:
       - Overview: nemoreefrecord/index.md
+      - Quick Start: nemoreefrecord/quickstart.md
 
   - Developer Guide:
       - Overview: developer-guide/index.md
