@@ -88,21 +88,24 @@ The exact schedule will be added here after validation with the Mission 1:
 A **physical acoustic signal recorded by all eight cameras** can then be used to refine temporal alignment during post-processing.
 
 !!! important
-The acoustic marker must be physically audible to all cameras. A sound present only in the reference camera's own audio track cannot synchronize the other seven cameras.
+    The acoustic marker must be physically audible to all cameras. A sound present only in the reference camera's own audio track cannot synchronize the other seven cameras.
 
 ## 4. Autonomy tests
 
-Preliminary tests were performed in **4K 4:3 / 60 fps / Wide** to evaluate battery life and overheating.
+Preliminary tests were performed in **4K 4:3 / 60 fps / Wide** to evaluate recording autonomy and overheating.
 
-| Test                | Configuration                | Cycle                         |      Video obtained | Main observation               |
-| ------------------- | ---------------------------- | ----------------------------- | ------------------: | ------------------------------ |
-| **22/09 morning**   | 10-bit                       | 20 min REC / 1 min pause      | **1 h 14 min 51 s** | Thermal shutdown               |
-| **22/09 afternoon** | 10-bit                       | 20 min REC / 1 min pause      |    **≈ 1 h 39 min** | Probable battery depletion     |
-| **23/09**           | **8-bit, stabilization OFF** | **10 min REC / 10 min pause** |    **≈ 1 h 52 min** | Best result; ~48.5 GB recorded |
+| Test         | Configuration | Cycle | Total recorded video | Main observation                         |
+|--------------|---|---|---:|------------------------------------------|
+| **23/09 pm** | **8-bit, stabilization OFF** | **10 min REC / 10 min pause** | **≈ 1 h 52 min** | 11 complete sequences + ~2 min; ~47 GB   | |
+| **23/09 am** | **8-bit, stabilization OFF** | **10 min REC / 10 min pause** | **≈ 1 h 52 min** | 11 complete sequences + ~2 min; ~48.5 GB |
+| **22/09 pm** | 10-bit | 20 min REC / 1 min pause | **≈ 1 h 39 min** | Probable battery depletion               |
+| **22/09 am** | 10-bit | 20 min REC / 1 min pause | **1 h 14 min 51 s** | Thermal shutdown                         |
 
-The **8-bit / stabilization OFF / 10 min REC / 10 min pause** configuration provided the best autonomy and is currently retained for NemoReefRecord.
+The two tests performed with the selected **8-bit / stabilization OFF / 10 min REC / 10 min pause** configuration both provided approximately **1 h 52 min of recorded video**, showing consistent recording autonomy across repeated tests.
+
+This configuration is currently retained for NemoReefRecord and will next be validated simultaneously on the complete **8-camera system**.
 
 Detailed test results will be moved to a dedicated **Tests** page as the 8-camera validation progresses.
 
 !!! tip "Wi-Fi / iPhone setup"
-During Wi-Fi / iPhone configuration, **do not connect the GoPro to external power**.
+    During Wi-Fi / iPhone configuration, **do not connect the GoPro to external power**.
