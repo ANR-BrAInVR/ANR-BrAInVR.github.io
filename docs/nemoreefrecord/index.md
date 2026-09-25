@@ -48,7 +48,7 @@ The target configuration uses **8 GoPro Mission 1 cameras**. Camera settings, cl
 | Transport | Fully demountable structure transported in a rigid protective case |
 | Deployment site | Moorea, French Polynesia |
 
-For camera configuration, synchronization and recording procedures, see the **[NemoReefRecord Quickstart](quickstart.md)**.
+For camera configuration and recording procedures, see the **[NemoReefRecord Quickstart](quickstart.md){ target="_blank" rel="noopener" }**. Experimental validation is documented on the **[NemoReefRecord Tests](tests.md){ target="_blank" rel="noopener" }** page.
 
 ---
 
@@ -74,3 +74,32 @@ NemoReefRecord is designed to:
 - reconstruct animal trajectories in three dimensions;
 - quantify spatial and social interactions between individuals;
 - generate datasets for behavioural analysis and virtual-reality applications.
+
+---
+
+## Current laboratory setup
+
+The current NemoReefRecord structure is assembled in the laboratory for camera positioning, field-of-view and acquisition tests.
+
+<div style="width: 100%;">
+
+  <img
+    src="../assets/nemoreefrecord/view_in_lab_2.jpeg"
+    style="width: 100%; display: block; margin-bottom: 12px;"
+    alt="Overview of the current NemoReefRecord laboratory setup"
+  >
+
+  <div style="display: flex; gap: 12px; align-items: flex-start;">
+    <img
+      src="../assets/nemoreefrecord/view_in_lab_1.jpeg"
+      style="width: calc(50% - 6px);"
+      alt="Side view of the current NemoReefRecord laboratory setup"
+    >
+    <img
+      src="../assets/nemoreefrecord/zoom_foot_and_cam.jpeg"
+      style="width: calc(50% - 6px);"
+      alt="Detail of a NemoReefRecord camera mount"
+    >
+  </div>
+
+</div>
