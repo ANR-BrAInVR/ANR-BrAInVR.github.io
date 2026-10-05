@@ -15,7 +15,6 @@ Recording tests were performed to evaluate camera autonomy, thermal behaviour an
 | **22/09 pm** | **10-bit** | **20 min REC / 1 min pause** | **≈ 1 h 39 min** | Probable battery depletion |
 | **22/09 am** | **10-bit** | **20 min REC / 1 min pause** | **1 h 14 min 51 s** | Thermal shutdown |
 
-
 ### GoPro Labs instructions
 
 ??? info ":material-camera: 24–25/09 — 5 min REC / 35 min pause"
@@ -51,14 +50,12 @@ Recording tests were performed to evaluate camera autonomy, thermal behaviour an
     !10:20NmVr4Tp60fWd1g0oW0oV0oD0!S!2NoDO!1198E!2N!10:41N!S!2NoDO!1198E!2N!11:02N!S!2NoDO!1198E!2N!11:23N!S!2NoDO!1198E!2N!11:44N!S!2NoDO!1198E!2N!12:05N!S!2NoDO!1198E!2N!12:26N!S!2NoDO!1198E!2N!12:47N!S!2NoDO!1198E!2N!13:08N!S!2NoDO!1198E
     ```
 
-
 The two tests performed with the selected **8-bit / stabilization OFF / 10 min REC / 10 min pause** configuration both provided approximately **1 h 52 min of recorded video**, showing consistent recording autonomy across repeated tests.
 
 This configuration is currently retained for NemoReefRecord and will next be validated simultaneously on the complete **8-camera system**.
 
 !!! tip "Wi-Fi / iPhone setup"
     During Wi-Fi / iPhone configuration, **do not connect the GoPro to external power**.
-
 
 ## 2. Field-of-view tests
 
@@ -79,3 +76,57 @@ For the upper cameras, the **4:3 format increases the visible area around the ac
 ### Selected format
 
 Based on these tests, **4K 4:3** was selected as the current recording format for NemoReefRecord.
+
+## 3. Clock synchronization and drift tests
+
+Clock synchronization tests were started to evaluate whether the eight **GoPro MISSION 1** cameras can maintain sufficiently close internal clocks during long recordings.
+
+The objective is to synchronize all cameras before acquisition and then characterize the **free-running clock drift** over several hours.
+
+### Precision Time drift test
+
+A first drift-calibration test was performed using the GoPro Labs **Precision Time QR code**.
+
+The procedure was:
+
+1. Synchronize the MISSION 1 internal clock using the Precision Time QR code.
+2. Enable automatic drift calibration:
+   ```text
+   *DRFT=1
+   ```
+3. Leave the camera clock running for approximately **72 h** without another Precision Time synchronization.
+4. Present a second Precision Time QR code after the 72 h interval.
+5. Inspect the recorded GoPro Labs metadata for the expected drift-related values.
+
+The recorded metadata confirms that:
+
+```text
+DRFT 1
+```
+
+is correctly stored by the MISSION 1.
+
+However, no `DRFS` value was generated or found after the second Precision Time synchronization.
+
+The same behaviour was also observed in a separate test using GPS clock synchronization with approximately 24 h between two GPS synchronization events.
+
+At this stage, it is therefore unclear whether automatic `DRFT` calibration and `DRFS` generation are fully implemented on the **MISSION 1**.
+
+A question has been opened in the official GoPro Labs GitHub discussions:
+
+[GoPro Labs Discussion #1830 — MISSION 1 clock drift / DRFT / DRFS](https://github.com/gopro/labs/discussions/1830)
+
+!!! warning "DRFS availability on MISSION 1"
+    `DRFT=1` is confirmed to be stored in MISSION 1 video metadata, but no `DRFS` value has yet been observed after repeated Precision Time or GPS synchronization tests.
+
+    Confirmation from the GoPro Labs developers is currently pending.
+
+### Next steps
+
+Further synchronization tests will focus on:
+
+- initial synchronization accuracy using GPS Sync;
+- clock drift over approximately **12 h**, matching the intended NemoReefRecord acquisition duration;
+- drift variability between the eight MISSION 1 cameras;
+- timestamps available in MP4 and GoPro metadata for frame-level synchronization;
+- possible post-processing correction of residual inter-camera drift.
