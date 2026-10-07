@@ -199,63 +199,208 @@ The normalized cross-correlation values provide an additional quality-control me
 
 ## Open air — `test_drft6`
 
-The final analysed dataset was acquired in open air.
+The final analysed dataset was acquired in open air using absolute recording windows.
+
+The acoustic conditions were substantially cleaner than underwater, allowing the CAM1 marker to be detected very reliably in CAM2–CAM4.
 
 ![CAM1 marker synchronization summary — test_drft6 open air](../../assets/nemoreefrecord/test_drft6_open_air_absolute_sync_summary.png)
 
 
 ### Open-air marker detection examples
 
-The acoustic conditions are substantially cleaner than underwater.
-
 Individual CAM1 tones are clearly visible in the raw waveform and generate strong peaks in the filtered-energy signal.
 
-![Open-air CAM1 beep detection — CAM3 session 1](../../assets/nemoreefrecord/test_drft6_open_air_CAM3_session01_beep_detection.png)
+The marker-selection algorithm identifies the characteristic CAM1 acoustic pattern and can correct the initial cross-correlation estimate when necessary.
 
 ![Open-air CAM1 beep detection — CAM2 session 1](../../assets/nemoreefrecord/test_drft6_open_air_CAM2_session01_beep_detection.png)
 
-The examples show normalized correlations approaching **1.0**.
+![Open-air CAM1 beep detection — CAM3 session 1](../../assets/nemoreefrecord/test_drft6_open_air_CAM3_session01_beep_detection.png)
+
+For these examples, normalized correlations are approximately **0.98–1.00**, and the selected acoustic marker is clearly identifiable in the raw audio signal.
+
+!!! success "Open-air marker detection"
+    The `test_drft6` results validate reliable automatic detection of the CAM1 acoustic marker in the other cameras under open-air conditions.
+
+    This provides the temporal landmark required for the next processing step: generating synchronized video sequences.
 
 
-## Preliminary comparison
+## From marker detection to synchronized videos
 
-The current results demonstrate that **absolute scheduling and synchronization are separate problems**.
+The next step is to use the detected acoustic markers to generate a new set of videos that share the same temporal origin.
 
-Explicitly programming the same recording windows on several cameras does not guarantee that the effective video start times are identical.
+Importantly, **CAM1 should not be trimmed at its acoustic marker**.
 
-Some analysed sessions show relative marker offsets of several hundred milliseconds, with some apparent differences approaching or exceeding **1 s**.
-
-!!! warning "Large-offset validation"
-    The largest apparent offsets in `test_drft4` and `test_drft5` should be validated against the raw acoustic signal before being interpreted as true camera-start offsets.
-
-    A high cross-correlation value alone does not guarantee that the correct acoustic event was selected in a complex underwater recording.
+CAM1 is the reference camera and already contains useful video before the marker. This part of the recording should be preserved.
 
 
-!!! important "Absolute scheduling ≠ camera synchronization"
-    Absolute GoPro Labs recording times provide a reproducible experimental schedule but should not be interpreted as frame-level synchronization.
+### Synchronization principle
 
-    Acoustic markers remain necessary to measure the effective temporal relationship between cameras.
+For each session, the position of the acoustic marker must first be measured independently in CAM1, CAM2, CAM3 and CAM4.
+
+For CAM1, the number of video frames between the beginning of the recording and the acoustic marker is determined:
+
+```text
+CAM1 start                     CAM1 marker
+│                                  │
+├──────── N reference frames ──────┤
+│                                  │
+frame 0                         frame N
+```
+
+This value defines the desired position of the marker in every synchronized video.
+
+CAM1 remains unchanged.
+
+CAM2–CAM4 are then trimmed so that their detected CAM1 marker occurs at exactly the same frame index `N`:
+
+```text
+                         CAM1 marker
+                              │
+CAM1  │───────────────────────│──────────────────────►
+      0                       N
+
+CAM2        │─────────────────│──────────────────────►
+            ↑ trim            N
+
+CAM3     │────────────────────│──────────────────────►
+         ↑ trim               N
+
+CAM4          │───────────────│──────────────────────►
+              ↑ trim          N
+```
+
+The synchronized videos therefore preserve the complete CAM1 sequence while shifting the effective beginning of CAM2–CAM4 to reproduce the same pre-marker duration.
 
 
-## Current test matrix
+### Frame-based alignment
 
-| Environment | Scheduling | Acoustic synchronization | Status |
-|---|---|---|---|
-| Open air | Relative loop | Start + end markers | **Analysed** |
-| Underwater | Absolute | Start marker | **Analysed** |
-| Open air | Absolute | Start marker | **Analysed** |
-| Underwater | Relative loop | — | Not yet analysed |
+At **60 fps**, the CAM1 reference position can be expressed directly as a frame number:
+
+```text
+reference_frame = CAM1_marker_time × 60
+```
+
+For each other camera:
+
+```text
+trim_time_camera =
+    marker_time_camera
+    - CAM1_marker_time
+```
+
+or equivalently in frames:
+
+```text
+trim_frames_camera =
+    marker_frame_camera
+    - marker_frame_CAM1
+```
+
+For example, if the CAM1 marker occurs at frame `180`:
+
+```text
+CAM1 marker = frame 180
+```
+
+and the same marker occurs at:
+
+```text
+CAM2 = frame 3660
+CAM3 = frame 3638
+CAM4 = frame 3651
+```
+
+the corresponding initial portions removed from the target videos are:
+
+```text
+CAM2: 3660 - 180 = 3480 frames
+CAM3: 3638 - 180 = 3458 frames
+CAM4: 3651 - 180 = 3471 frames
+```
+
+After trimming, the acoustic marker occurs at **frame 180 in all four videos**.
+
+!!! important "CAM1 defines the reference timeline"
+    The objective is not to make every video start at the acoustic marker.
+
+    The objective is to make every video start at the **same physical instant as CAM1**.
+
+    The portion of CAM1 preceding the marker is therefore preserved, and CAM2–CAM4 are trimmed accordingly.
+
+
+### Why frame-level alignment is required
+
+The acoustic analysis currently provides marker positions with sub-second precision.
+
+For the final synchronized dataset, these positions must be converted to the corresponding video-frame positions.
+
+At 60 fps:
+
+```text
+1 frame = 16.67 ms
+```
+
+The final synchronization procedure will therefore combine:
+
+1. acoustic-marker detection;
+2. determination of the marker position in CAM1;
+3. conversion of marker times to video-frame positions;
+4. calculation of the required CAM2–CAM4 trimming offsets;
+5. generation of new synchronized video files;
+6. verification that the marker occurs at the same frame in every output video.
+
+
+### Expected output
+
+For each recording session, the processing pipeline will generate one synchronized video per camera:
+
+```text
+synchronized/
+├── session_01/
+│   ├── CAM1_synced.mp4
+│   ├── CAM2_synced.mp4
+│   ├── CAM3_synced.mp4
+│   └── CAM4_synced.mp4
+├── session_02/
+│   ├── CAM1_synced.mp4
+│   ├── CAM2_synced.mp4
+│   ├── CAM3_synced.mp4
+│   └── CAM4_synced.mp4
+└── ...
+```
+
+`CAM1_synced.mp4` can remain identical to the original CAM1 video, while CAM2–CAM4 are temporally trimmed to match its timeline.
+
+
+## Current validation status
+
+The synchronization workflow has now been validated through several successive stages:
+
+| Step | Status |
+|---|---|
+| Generate acoustic reference marker with CAM1 | **Validated** |
+| Record CAM1 marker on the other cameras | **Validated** |
+| Detect marker automatically in open air | **Validated** |
+| Detect marker underwater | **Validated, more challenging** |
+| Automatically select the correct marker pattern | **Validated in open air** |
+| Measure inter-camera marker offsets | **Validated** |
+| Determine marker frame in CAM1 | **Next step** |
+| Trim CAM2–CAM4 relative to CAM1 | **Next step** |
+| Generate synchronized multi-camera videos | **Next step** |
+| Verify frame-level synchronization | **Next step** |
 
 
 ## Next steps
 
-Further synchronization analysis will focus on:
+The immediate next experiment will use `test_drft6` as the validation dataset because of its very high acoustic-marker detection quality.
 
-- validation of the large apparent offsets in underwater recordings;
-- comparison of marker-detection reliability in air and underwater;
-- quantitative comparison of relative and absolute scheduling;
-- distribution of initial inter-camera offsets;
-- longer start/end-marker experiments to measure within-recording drift;
-- synchronization stability over approximately **12 h**;
-- automatic quality-control criteria for acoustic-marker detection;
-- post-processing correction of residual timing offsets.
+The processing pipeline will:
+
+1. detect the marker in the corresponding **CAM1 video** for each session;
+2. determine its exact position relative to the first video frame;
+3. use this position as the reference frame for the session;
+4. calculate the corresponding trimming offset for CAM2, CAM3 and CAM4;
+5. generate synchronized copies of the four videos;
+6. verify the resulting alignment at frame level.
+
+Once validated on the open-air dataset, the same pipeline will be applied to the underwater recordings.
