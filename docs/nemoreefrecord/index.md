@@ -48,7 +48,7 @@ The target configuration uses **8 GoPro Mission 1 cameras**. Camera settings, cl
 | Transport | Fully demountable structure transported in a rigid protective case |
 | Deployment site | Moorea, French Polynesia |
 
-For camera configuration and recording procedures, see the **[NemoReefRecord Quickstart](quickstart.md){ target="_blank" rel="noopener" }**. Experimental validation is documented on the **[NemoReefRecord Tests](tests.md){ target="_blank" rel="noopener" }** page.
+For camera configuration and recording procedures, see the **[NemoReefRecord Quickstart](quickstart.md){ target="_blank" rel="noopener" }**. Experimental validation is documented on the **[NemoReefRecord Tests](tests/index.md){ target="_blank" rel="noopener" }** page.
 
 ---
 

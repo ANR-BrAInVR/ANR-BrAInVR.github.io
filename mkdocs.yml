@@ -59,7 +59,12 @@ nav:
   - NemoReefRecord:
       - Overview: nemoreefrecord/index.md
       - Quick Start: nemoreefrecord/quickstart.md
-      - Tests: nemoreefrecord/tests.md
+      - Tests:
+          - Overview: nemoreefrecord/tests/index.md
+          - Recording & Battery: nemoreefrecord/tests/recording.md
+          - Field of View: nemoreefrecord/tests/field-of-view.md
+          - Scheduling: nemoreefrecord/tests/scheduling.md
+          - Synchronization: nemoreefrecord/tests/synchronization.md
 
   - Developer Guide:
       - Overview: developer-guide/index.md

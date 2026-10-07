@@ -170,7 +170,7 @@ A **physical acoustic signal recorded by all eight cameras** can then be used to
 
 ## Tests and validation
 
-Recording autonomy, thermal behaviour, GoPro Labs schedules and field-of-view comparisons are documented on the **[NemoReefRecord Tests](tests.md){ target="_blank" rel="noopener" }** page.
+Recording autonomy, thermal behaviour, GoPro Labs schedules and field-of-view comparisons are documented on the **[NemoReefRecord Tests](tests/index.md){ target="_blank" rel="noopener" }** page.
 
 ---
 
