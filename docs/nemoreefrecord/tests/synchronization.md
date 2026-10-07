@@ -258,30 +258,30 @@ For CAM2–CAM4, the beginning of each video is trimmed so that the detected CAM
 BEFORE TRIMMING
 
 CAM1   │─────────────── N ───────────────│──────────────►
-       video start                       marker
+       video start                     marker
 
 CAM2   │────────────────────────────────────────│────────►
-       video start                              marker
+       video start                            marker
        └────────────── trim ──────────────┘
 
 CAM3   │──────────────────────────────────────│──────────►
-       video start                            marker
+       video start                          marker
        └───────────── trim ─────────────┘
 
 CAM4   │───────────────────────────────────────────│─────►
-       video start                                 marker
+       video start                               marker
        └─────────────── trim ───────────────┘
 
 
 AFTER TRIMMING
 
        frame 0                            frame N
-       │                                        │
+       │                                      │
 CAM1   ├────────────────────────────────────────┼────────►
 CAM2   ├────────────────────────────────────────┼────────►
 CAM3   ├────────────────────────────────────────┼────────►
 CAM4   ├────────────────────────────────────────┼────────►
-                                                │
+                                              │
                                          acoustic marker
 ```
 
