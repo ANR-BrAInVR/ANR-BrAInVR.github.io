@@ -145,6 +145,28 @@ mVr4Tp60fWd0e0g0oW0oV7oD0oDO!13:16S!B0!13:19E!B0!13:46S!B0!13:49E!B0!14:16S!B0!1
 mVr4Tp60fWd0e0g0oW0oV0oD0oDO!13:15S!13:20E!13:45S!13:50E!14:15S!14:20E!14:45S!14:50E!15:15S!15:20E
 ```
 
+#### Observed CAM2 recording times
+
+The CAM2 filenames provide the recording timestamp with a resolution of one second.
+
+| Session | Programmed start | CAM2 filename time | Observed offset |
+|---:|---:|---:|---:|
+| 1 | 13:15:00 | 13:15:01 | +1 s |
+| 2 | 13:45:00 | 13:45:01 | +1 s |
+| 3 | 14:15:00 | 14:15:01 | +1 s |
+| 4 | 14:45:00 | 14:45:01 | +1 s |
+| 5 | 15:15:00 | 15:15:01 | +1 s |
+
+All five CAM2 filenames show the same **+1 s timestamp offset** relative to the programmed start time.
+
+Unlike the previous relative-loop experiment, **no cumulative timing shift is visible across successive recording sessions** at the one-second resolution available from the filenames.
+
+!!! success "Absolute scheduling"
+    Absolute scheduling produced highly repeatable recording timestamps across the five sessions: **+1 s for every recording**.
+
+    This contrasts with the relative-loop experiment, where the apparent delay progressively accumulated between sequences.
+
+    Filename timestamps have only one-second resolution and therefore cannot be used to assess sub-second inter-camera synchronization. Acoustic markers are analysed separately for that purpose.
 
 ### Test 3 — underwater — 16:15–18:20
 
