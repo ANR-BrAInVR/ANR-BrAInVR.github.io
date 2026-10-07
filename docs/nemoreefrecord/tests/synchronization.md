@@ -236,41 +236,61 @@ CAM1 is the reference camera and already contains useful video before the marker
 ### Synchronization principle
 
 For each session, the position of the acoustic marker must first be measured independently in CAM1, CAM2, CAM3 and CAM4.
-
-For CAM1, the number of video frames between the beginning of the recording and the acoustic marker is determined:
+For CAM1, the position of the acoustic marker relative to the beginning of the video is first determined:
 
 ```text
-CAM1 start                     CAM1 marker
-│                                  │
-├──────── N reference frames ──────┤
-│                                  │
-frame 0                         frame N
+CAM1
+
+video start                         acoustic marker
+│                                        │
+├──────────── N reference frames ────────┤
+│                                        │
+frame 0                                frame N
 ```
 
-This value defines the desired position of the marker in every synchronized video.
+This number of frames defines the reference timeline for the synchronized videos.
 
 CAM1 remains unchanged.
 
-CAM2–CAM4 are then trimmed so that their detected CAM1 marker occurs at exactly the same frame index `N`:
+For CAM2–CAM4, the beginning of each video is trimmed so that the detected CAM1 marker occurs at the same frame index `N`:
 
 ```text
-                         CAM1 marker
-                              │
-CAM1  │───────────────────────│──────────────────────►
-      0                       N
+BEFORE TRIMMING
 
-CAM2        │─────────────────│──────────────────────►
-            ↑ trim            N
+CAM1   │─────────────── N ───────────────│──────────────►
+       video start                       marker
 
-CAM3     │────────────────────│──────────────────────►
-         ↑ trim               N
+CAM2   │────────────────────────────────────────│────────►
+       video start                              marker
+       └────────────── trim ──────────────┘
 
-CAM4          │───────────────│──────────────────────►
-              ↑ trim          N
+CAM3   │──────────────────────────────────────│──────────►
+       video start                            marker
+       └───────────── trim ─────────────┘
+
+CAM4   │───────────────────────────────────────────│─────►
+       video start                                 marker
+       └─────────────── trim ───────────────┘
+
+
+AFTER TRIMMING
+
+       frame 0                            frame N
+       │                                        │
+CAM1   ├────────────────────────────────────────┼────────►
+CAM2   ├────────────────────────────────────────┼────────►
+CAM3   ├────────────────────────────────────────┼────────►
+CAM4   ├────────────────────────────────────────┼────────►
+                                                │
+                                         acoustic marker
 ```
 
-The synchronized videos therefore preserve the complete CAM1 sequence while shifting the effective beginning of CAM2–CAM4 to reproduce the same pre-marker duration.
+!!! important "CAM1 defines the reference timeline"
+    CAM1 is **not trimmed**.
 
+    CAM2–CAM4 are trimmed so that their new frame 0 corresponds to the same physical instant as CAM1 frame 0.
+
+    Consequently, the CAM1 acoustic marker occurs at the same frame index `N` in every synchronized output video.
 
 ### Frame-based alignment
 
