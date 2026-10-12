@@ -59,6 +59,9 @@ nav:
   - NemoReefRecord:
       - Overview: nemoreefrecord/index.md
       - Quick Start: nemoreefrecord/quickstart.md
+      - Software:
+        - Overview: nemoreefrecord/software/index.md
+        - Sync GUI: nemoreefrecord/software/synchronization-gui.md
       - Tests:
           - Overview: nemoreefrecord/tests/index.md
           - Recording & Battery: nemoreefrecord/tests/recording.md

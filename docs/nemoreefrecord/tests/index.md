@@ -53,7 +53,8 @@ Testing focuses on four complementary aspects of the system:
 | Acoustic synchronization | **Validated in principle** | CAM1 acoustic markers can be automatically detected |
 | Open-air synchronization | **Tested** | Very strong acoustic-marker detection |
 | Underwater synchronization | **Tested** | Markers remain detectable but acoustic environment is more complex |
-| Long-term clock drift | **Under investigation** | MISSION 1 `DRFS` behaviour remains unresolved |
+| Precision Time multi-camera stability | **Tested** | Offsets are not frame-stable and are not consistently linear across cameras |
+| Long-term clock drift | **Characterized** | No `DRFS` generated; GoPro Labs states it appears only when error reaches ~1 s / 24 h |
 
 
 ## Experimental strategy

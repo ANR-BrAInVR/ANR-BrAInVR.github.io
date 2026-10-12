@@ -65,6 +65,7 @@ The project combines real-time tracking, deep learning, virtual reality and auto
 | Guillaume Masson | CNRS Research Director | Institut de Neurosciences de la Timone |
 | Alexander Mathis | Associate Professor | EPFL |
 | Léandre Varennes | Research Engineer | Institut de Neurosciences de la Timone |
+| Marianne Duyck | Research Engineer | Institut de Neurosciences de la Timone |
 | Andy Bonnetto | PhD Researcher | EPFL |
 | Matea Tashkovska | PhD Researcher | EPFL |
 | Antoine Bouché | PhD Researcher | CRIOBE |
