@@ -27,9 +27,3 @@ The [Rendering PC hardware](../../hardware.md#rendering-pc) is responsible for r
 | nDisplay synchronization | Synchronizes rendering across multiple projectors |
 
 ---
-
-## Related documentation
-
-- [Rendering PC hardware](../../hardware.md#rendering-pc)
-- [MarmoVR hardware architecture](../../hardware.md#hardware-architecture)
-- [GitHub repository](https://github.com/ANR-BrAInVR/MarmoVR){ target="_blank" rel="noopener" }

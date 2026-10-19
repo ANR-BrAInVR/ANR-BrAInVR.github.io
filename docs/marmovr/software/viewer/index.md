@@ -8,7 +8,6 @@ The viewer module is used after data acquisition to inspect, replay and analyze 
 | Resource      | Link |
 | ------------- | ---- |
 | Repository    | [GitHub Repository](https://github.com/ANR-BrAInVR/MarmoVR-Viewer){ target="_blank" rel="noopener" } |
-| Documentation | *Documentation coming soon* |
 
 ### Responsibilities
 

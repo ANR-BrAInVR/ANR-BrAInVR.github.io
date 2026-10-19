@@ -1,14 +1,13 @@
 ## Tracking
 
 !!! info "Tracking PC (Linux)"
-This module runs on the Tracking PC under Ubuntu Linux.
+    This module runs on the Tracking PC under Ubuntu Linux.
 
 The tracking module processes images acquired from the four Ximea cameras to estimate the position, posture and behavior of the animal in real time. The resulting information is continuously transmitted to the Rendering PC.
 
 | Resource      | Link                                                                 |
 | ------------- | -------------------------------------------------------------------- |
 | Repository    | [GitHub Repository](https://github.com/ANR-BrAInVR/MarmoVR-Tracking){ target="_blank" rel="noopener" } |
-| Documentation | *Documentation coming soon*                                          |
 
 ### Responsibilities
 

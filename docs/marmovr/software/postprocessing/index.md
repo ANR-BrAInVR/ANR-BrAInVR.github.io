@@ -447,12 +447,3 @@ The current implementation includes several experimental or calibration-specific
 These points should be reviewed before deploying the module in a new MarmoVR configuration.
 
 ---
-
-## Related documentation
-
-- [Tracking PC hardware](../../hardware.md#tracking-pc)
-- [Tracking module](../tracking/index.md)
-- [Calibration module](../calibration/index.md)
-- [Viewer module](../viewer/index.md)
-- [DeepLabCut training](../../../developer-guide/deeplabcut-training.md)
-- [DLC model export](../../../developer-guide/dlc-model-export.md)
