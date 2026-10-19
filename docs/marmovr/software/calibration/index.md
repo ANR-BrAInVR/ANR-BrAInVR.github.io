@@ -7,7 +7,7 @@ The calibration module defines the geometric relationship between the cameras, t
 
 | Resource      | Link                                                                    |
 | ------------- | ----------------------------------------------------------------------- |
-| Repository    | *Repository link coming soon*                                             |
+| Repository    | [GitHub Repository](https://github.com/ANR-BrAInVR/MarmoVR-CalibrationUI){ target="_blank" rel="noopener" }                                             |
 
 ### Responsibilities
 
